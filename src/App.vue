@@ -40,8 +40,11 @@ export default {
       this.selectedOrder = order;
     },
 
-    sortRelevance(){
-
+    sortRelevance(a, b){
+      if (a.isAvailable === b.isAvailable) {
+        return a.rank - b.rank;
+      }
+      return a.isAvailable ? -1 : 1;
     }
   },
   computed: {
@@ -65,20 +68,14 @@ export default {
     },
 
     sortProducts() {
-      let sortedProducts = [...this.filterProducts]
-      
-      if (this.selectedOrder == "price-ascending") {
-        sortedProducts.sort((a, b) => a.price - b.price)
-      } else if (this.selectedOrder == "price-descending") {
-        sortedProducts.sort((a, b) => b.price - a.price)
-      } else {
-        sortedProducts.sort((a, b) => {
-          if (a.isAvailable == b.isAvailable){
-            return a.rank - b.rank
-          }
-          return a.isAvailable? -1 : 1;
-        })
+      const sortFunctions = {
+        "price-descending": ((a, b) => b.price - a.price),
+        "price-ascending": ((a, b) => a.price - b.price),
+        "relevance": this.sortRelevance
       }
+
+      const selectedSortFunction = sortFunctions[this.selectedOrder];   
+      const sortedProducts = [...this.filterProducts].sort(selectedSortFunction)
 
       return sortedProducts;
     }
