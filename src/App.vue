@@ -1,8 +1,8 @@
 <template>
   <div class="app" ref="app-container">
     <FilterToolbar :brands="listBrands" @updateAvailableFilter="showAvailableOnly" @updateSelectedBrandsFilter="showSelectedBrandsOnly"/>
-    <DropDownMenu />
-    <ProductGridList :products="filterProducts" />
+    <DropDownMenu @updateSortingOrder="showInOrderSelected"/>
+    <ProductGridList :products="sortProducts" />
   </div>
 </template>
 
@@ -23,7 +23,8 @@ export default {
     return {
       products,
       availableOnly: false,
-      selectedBrands: []
+      selectedBrands: [],
+      selectedOrder: 'relevance'
     };
   },
   methods: {
@@ -32,7 +33,15 @@ export default {
     },
 
     showSelectedBrandsOnly(brands) {
-      this.selectedBrands = brands
+      this.selectedBrands = brands;
+    },
+
+    showInOrderSelected(order) {
+      this.selectedOrder = order;
+    },
+
+    sortRelevance(){
+
     }
   },
   computed: {
@@ -54,6 +63,18 @@ export default {
 
       return filteredProducts;
     },
+
+    sortProducts() {
+      let sortedProducts = [...this.filterProducts]
+      
+      if (this.selectedOrder == "price-ascending") {
+        sortedProducts.sort((a, b) => a.price - b.price)
+      } else if (this.selectedOrder == "price-descending") {
+        sortedProducts.sort((a, b) => b.price - a.price)
+      }
+
+      return sortedProducts;
+    }
 
 
   }

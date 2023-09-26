@@ -2,8 +2,8 @@
   <label class="sorting-dropdownmenu">
     <select class="dropdown-select" @change="sortOrder" v-model="selectedOrder">
       <option disabled selected value="">Sort by:</option>
-      <option value="price-ascending">Price: High to Low</option>
-      <option value="price-descending">Price: Low to High</option>
+      <option value="price-descending">Price: High to Low</option>
+      <option value="price-ascending">Price: Low to High</option>
       <option value="relevance">Relevance</option>
     </select>
   </label>
