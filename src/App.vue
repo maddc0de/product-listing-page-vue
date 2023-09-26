@@ -71,12 +71,17 @@ export default {
         sortedProducts.sort((a, b) => a.price - b.price)
       } else if (this.selectedOrder == "price-descending") {
         sortedProducts.sort((a, b) => b.price - a.price)
+      } else {
+        sortedProducts.sort((a, b) => {
+          if (a.isAvailable == b.isAvailable){
+            return a.rank - b.rank
+          }
+          return a.isAvailable? -1 : 1;
+        })
       }
 
       return sortedProducts;
     }
-
-
   }
 };
 </script>
