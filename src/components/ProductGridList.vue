@@ -1,8 +1,8 @@
 <template>
-  <section>
+  <section class="py-2">
     <p>{{ products.length }} Results</p>
-    <ul>
-      <li v-for="product in products" :key="product.name" class="product-grid-item">
+    <ul class="grid gap-4 md:grid-cols-3 sm:grid-cols-2 place-items-center">
+      <li v-for="product in products" :key="product.name" class="bg-plp-secondary">
         <ProductGridItem :product="product"/>
       </li>
     </ul>
@@ -21,18 +21,3 @@ export default {
   }
 };
 </script>
-
-<!-- <style scoped>
-ul.products-grid {
-  display: flex;
-  flex-wrap: wrap;
-  list-style-type: none;
-}
-
-.product-grid-item {
-  background: #ddebe8;
-  min-width: 300px;
-  margin: 10px;
-}
-
-</style> -->

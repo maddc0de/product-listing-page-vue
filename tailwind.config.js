@@ -6,16 +6,15 @@ module.exports = {
     extend: {
       colors: {
         "plp-primary": "#090B1A",
-        "plp-secondary": "#DDEbE8"
+        "plp-secondary": "#DDEBE8",
+        "plp-grey": "#606569",
+        "plp-link": "#3a7f71"
       }
     },
-    container: {
-      padding: "2rem",
-      center: true
-    },
     screens: {  //breakpoints
-      sm: "380px", //280?
-      md: "768px"
+      sm: "280px",
+      md: "768px",
+      lg: "912px"
     }
   },
   plugins: [],

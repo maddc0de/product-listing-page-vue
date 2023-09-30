@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-yellow-300" ref="app-container">
+  <div class="max-w-[1300px] mx-auto md:px-10 text-plp-grey" ref="app-container">
     <FilterToolbar :brands="listBrands" @updateAvailableFilter="showAvailableOnly" @updateSelectedBrandsFilter="showSelectedBrandsOnly"/>
     <DropDownMenu @updateSortingOrder="showInOrderSelected"/>
     <ProductGridList :products="sortProducts" />
@@ -86,13 +86,7 @@ export default {
 <!-- <style>
 .app {
   max-width: 1024px;
-  margin: 0 auto;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
-  color: #606569;
-}
-
-.link {
-  color: #3a7f71;
 }
 </style> -->

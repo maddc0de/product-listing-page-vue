@@ -1,13 +1,17 @@
 <template>
-  <div class="filters-toolbar">
-    <label for="available" class="filter-checkbox">
-      <input type="checkbox" id="available" v-model="availableOnly">
-      Available only
-    </label>
-    <label v-for="brand in brands" :for="brand" :key="brand" class="filter-checkbox">
-      <input type="checkbox" :id="brand" :value="brand" v-model="selectedBrands"/>
-      {{ brand }}
-    </label>
+  <div class="flex flex-wrap mx-2">
+    <div class="lg:w-1/6 sm:w-1/3">
+      <label for="available">
+        <input type="checkbox" id="available" v-model="availableOnly">
+        Available only
+      </label>
+    </div>
+    <div v-for="brand in brands" :for="brand" :key="brand" class="lg:w-1/6 sm:w-1/3">
+      <label>
+        <input type="checkbox" :id="brand" :value="brand" v-model="selectedBrands"/>
+        {{ brand }}
+      </label>
+    </div>
   </div>
 </template>
 
@@ -34,9 +38,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-.filter-checkbox {
-  margin-right: 20px;
-}
-</style>
