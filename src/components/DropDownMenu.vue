@@ -1,6 +1,6 @@
 <template>
-  <label class="sorting-dropdownmenu">
-    <select class="dropdown-select" @change="sortOrder" v-model="selectedOrder">
+  <label>
+    <select @change="sortOrder" v-model="selectedOrder">
       <option disabled selected value="">Sort by:</option>
       <option value="price-descending">Price: High to Low</option>
       <option value="price-ascending">Price: Low to High</option>
@@ -25,9 +25,9 @@ export default {
 }
 </script>
 
-<style scoped>
+<!-- <style scoped>
 .sorting-dropdownmenu {
   display: flex;
   justify-content: center;
 }
-</style>
+</style> -->

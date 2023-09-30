@@ -1,11 +1,11 @@
 <template>
   <div>
-    <img class="product-image" :src="product.image" />
-    <p class="product-name">
+    <img :src="product.image" />
+    <p>
       <span> {{ product.brand }}</span>
       {{ product.name }}
     </p>
-    <p class="product-price"> 
+    <p> 
       £{{ product.price }}
     </p>
   </div>
@@ -20,10 +20,8 @@ export default {
 }
 </script>
 
-<style scoped>
-
-
+<!-- <style scoped>
 .product-image {
   width: 100%;
 }
-</style>
+</style> -->

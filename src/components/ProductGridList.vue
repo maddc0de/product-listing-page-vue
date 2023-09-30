@@ -1,7 +1,7 @@
 <template>
   <section>
     <p>{{ products.length }} Results</p>
-    <ul class="products-grid">
+    <ul>
       <li v-for="product in products" :key="product.name" class="product-grid-item">
         <ProductGridItem :product="product"/>
       </li>
@@ -22,7 +22,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<!-- <style scoped>
 ul.products-grid {
   display: flex;
   flex-wrap: wrap;
@@ -35,4 +35,4 @@ ul.products-grid {
   margin: 10px;
 }
 
-</style>
+</style> -->
