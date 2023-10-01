@@ -57,11 +57,11 @@ export default {
       let filteredProducts = this.products;
 
       if (this.availableOnly) {
-        filteredProducts = this.products.filter(product => product.isAvailable)
+        filteredProducts = filteredProducts.filter(product => product.isAvailable)
       };
 
       if (this.selectedBrands.length > 0) {
-        filteredProducts = this.products.filter(product => this.selectedBrands.includes(product.brand))
+        filteredProducts = filteredProducts.filter(product => this.selectedBrands.includes(product.brand))
       };
 
       return filteredProducts;
