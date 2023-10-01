@@ -1,11 +1,11 @@
 <template>
-  <div>
+  <div class="hover:text-indigo-500 hover:border hover:border-indigo-500 border border-transparent">
     <img :src="product.image" />
-    <p>
+    <p class="p-2 font-semibold">
       <span> {{ product.brand }}</span>
       {{ product.name }}
     </p>
-    <p> 
+    <p class="pl-2 pb-2 font-bold"> 
       £{{ product.price }}
     </p>
   </div>
