@@ -1,6 +1,6 @@
 <template>
-  <section class="py-2">
-    <p>{{ products.length }} Results</p>
+  <section class="py-5">
+    <p class="text-xs">{{ products.length }} Results</p>
     <ul class="grid gap-4 md:grid-cols-3 sm:grid-cols-2 place-items-center">
       <li v-for="product in products" :key="product.name" class="bg-plp-secondary">
         <ProductGridItem :product="product"/>
